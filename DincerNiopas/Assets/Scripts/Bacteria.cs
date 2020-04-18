@@ -27,7 +27,7 @@ public class Bacteria : MonoBehaviour
         targetPosition = new Vector2(targetCell.transform.position.x, targetCell.transform.position.y);
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (targetCell != null)
         {
@@ -39,9 +39,17 @@ public class Bacteria : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void DestroyBacteria(int sequenceFromUser)
     {
-        gameManager.AnnounceBacteriaDeath();
-        Destroy(gameObject);
+        if(nucleusSequence == sequenceFromUser)
+        {
+            gameManager.AnnounceBacteriaDeath();
+            Destroy(gameObject);
+        }
     }
+
+    public void SetNucleusSequence(int nucleusSequenceByUser)
+    {
+		nucleusSequence = nucleusSequenceByUser;
+	}
 }

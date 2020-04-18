@@ -21,8 +21,8 @@ public class ClickManager : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
             if (hit.collider != null)
             {
-                Debug.Log(hit.collider.gameObject.name);
-                hit.collider.attachedRigidbody.AddForce(Vector2.up);
+                //Debug.Log(hit.collider.gameObject.name);
+                hit.collider.gameObject.GetComponent<Bacteria>().DestroyBacteria(9999);
             }
         }
     }

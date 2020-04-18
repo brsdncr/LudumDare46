@@ -42,7 +42,6 @@ public class GameManager : MonoBehaviour
     public void AnnounceBacteriaDeath()
     {
         numberOfDeadBacterias++;
-        Debug.Log(numberOfDeadBacterias);
         if (numberOfDeadBacterias == numberOfBacteriasForLevel)
         {
             Debug.Log("Level Ended");
