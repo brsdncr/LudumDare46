@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d105780b8ab8a4e4b86841bbef9b9d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bacteriaPrefab: {fileID: 6505245994173255910, guid: be37397fa1fdd44b9a67af4a175227db,
+  bacteriaPrefab: {fileID: 1907220513044348659, guid: be37397fa1fdd44b9a67af4a175227db,
     type: 3}
 --- !u!4 &641423438
 Transform:
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d105780b8ab8a4e4b86841bbef9b9d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bacteriaPrefab: {fileID: 6505245994173255910, guid: be37397fa1fdd44b9a67af4a175227db,
+  bacteriaPrefab: {fileID: 1907220513044348659, guid: be37397fa1fdd44b9a67af4a175227db,
     type: 3}
 --- !u!4 &741859517
 Transform:
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d105780b8ab8a4e4b86841bbef9b9d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bacteriaPrefab: {fileID: 6505245994173255910, guid: be37397fa1fdd44b9a67af4a175227db,
+  bacteriaPrefab: {fileID: 1907220513044348659, guid: be37397fa1fdd44b9a67af4a175227db,
     type: 3}
 --- !u!1 &1970578169
 GameObject:
