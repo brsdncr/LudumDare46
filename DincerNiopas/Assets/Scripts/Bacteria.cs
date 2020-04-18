@@ -9,7 +9,7 @@ public class Bacteria : MonoBehaviour
     private float rotateSpeed = 20f;
     Rigidbody2D rb;
     Vector2 targetPosition;
-
+    
     GameManager gameManager;
 
 
@@ -18,7 +18,6 @@ public class Bacteria : MonoBehaviour
     private void Awake()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        //gameManager.AnnounceNewBacteriaSpawn();
     }
 
     private void Start()

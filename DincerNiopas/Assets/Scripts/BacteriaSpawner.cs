@@ -4,18 +4,27 @@ public class BacteriaSpawner : MonoBehaviour
 {
 	[SerializeField] GameObject bacteriaPrefab;
     // Start is called before the first frame update
-    float startAfterTime = 2.0f;
-    float repeatingTime = 2.0f;
+    [SerializeField] float startAfterTime;
+    [SerializeField] float repeatingTime;
 
-    //private void Start()
-    //{
-    //    InvokeRepeating("Spawn", startAfterTime, repeatingTime);
-    //}
+	int numberOfBacteriasInQueue = 0;
 
     public void SpawnBacteria () {
-        var bacteria = Instantiate(bacteriaPrefab, transform.position, Quaternion.identity);
-    }
+		
+		numberOfBacteriasInQueue++;
 
+	}
 
-
+	void Update()
+	{
+        if(numberOfBacteriasInQueue > 0)
+		{
+			if (Time.time > startAfterTime)
+			{
+                startAfterTime += repeatingTime;
+				var bacteria = Instantiate(bacteriaPrefab, transform.position, Quaternion.identity);
+                numberOfBacteriasInQueue--;
+		    }
+		}
+	}
 }
