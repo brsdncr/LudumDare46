@@ -9,11 +9,21 @@ public class Bacteria : MonoBehaviour
     private float rotateSpeed = 20f;
     Rigidbody2D rb;
     Vector2 targetPosition;
-    
 
+    GameManager gameManager;
+
+
+    int nucleusSequence = 9999;
+
+    private void Awake()
+    {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        //gameManager.AnnounceNewBacteriaSpawn();
+    }
 
     private void Start()
     {
+        
         rb = GetComponent<Rigidbody2D>();
         targetPosition = new Vector2(targetCell.transform.position.x, targetCell.transform.position.y);
     }
@@ -32,6 +42,7 @@ public class Bacteria : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        gameManager.AnnounceBacteriaDeath();
         Destroy(gameObject);
     }
 }

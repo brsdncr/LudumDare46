@@ -120,6 +120,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &482233000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 482233002}
+  - component: {fileID: 482233001}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: GameManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &482233001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482233000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6cbbe6a41aa146faab3d30e8ec59a3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfBacteriasForLevel: 10
+--- !u!4 &482233002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482233000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &641423436
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +176,7 @@ GameObject:
   - component: {fileID: 641423437}
   m_Layer: 0
   m_Name: BacteriaSpawnerMiddle
-  m_TagString: Untagged
+  m_TagString: BacteriaSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d105780b8ab8a4e4b86841bbef9b9d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bacteriaPrefab: {fileID: 1907220513044348659, guid: be37397fa1fdd44b9a67af4a175227db,
+  bacteriaPrefab: {fileID: 1907220513044348658, guid: be37397fa1fdd44b9a67af4a175227db,
     type: 3}
 --- !u!4 &641423438
 Transform:
@@ -177,7 +221,7 @@ GameObject:
   - component: {fileID: 741859516}
   m_Layer: 0
   m_Name: BacteriaSpawnerRight
-  m_TagString: Untagged
+  m_TagString: BacteriaSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d105780b8ab8a4e4b86841bbef9b9d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bacteriaPrefab: {fileID: 1907220513044348659, guid: be37397fa1fdd44b9a67af4a175227db,
+  bacteriaPrefab: {fileID: 1907220513044348658, guid: be37397fa1fdd44b9a67af4a175227db,
     type: 3}
 --- !u!4 &741859517
 Transform:
@@ -313,7 +357,7 @@ GameObject:
   - component: {fileID: 1967009492}
   m_Layer: 0
   m_Name: BacteriaSpawnerLeft
-  m_TagString: Untagged
+  m_TagString: BacteriaSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -344,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d105780b8ab8a4e4b86841bbef9b9d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bacteriaPrefab: {fileID: 1907220513044348659, guid: be37397fa1fdd44b9a67af4a175227db,
+  bacteriaPrefab: {fileID: 1907220513044348658, guid: be37397fa1fdd44b9a67af4a175227db,
     type: 3}
 --- !u!1 &1970578169
 GameObject:

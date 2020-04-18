@@ -98,6 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCell: {fileID: 7161004537870039750, guid: 7b33094ac71e64e7a81d74de96075574,
     type: 3}
+  gameManager: {fileID: 3318181423409886056, guid: c39fcf3493d25404584279898ee5ee0c,
+    type: 3}
 --- !u!50 &1907220513044348662
 Rigidbody2D:
   serializedVersion: 4
