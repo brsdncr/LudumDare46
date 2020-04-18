@@ -8,32 +8,21 @@ public class BacteriaSpawner : MonoBehaviour
     [SerializeField] float repeatingTime;
 
 	int numberOfBacteriasInQueue = 0;
-
+	int numberOfColors = 4;
 
 	private int GenerateNucleusSequence()
 	{
 		int nucleusSequenceForNewBacteria = 0;
+		for (int i = 0; i < numberOfColors; i++)
+		{
+            //From Black to Red
+            int colorSetter = Random.Range(0, 2);
 
-		int redColor = Random.Range(0, 2);
-		int greenColor = Random.Range(0, 2);
-		int blueColor = Random.Range(0, 2);
-		int blackColor = Random.Range(0, 2);
+            if(colorSetter == 1)
+			{
+				nucleusSequenceForNewBacteria += (int)Mathf.Pow(10f, i);
+			}
 
-		if (redColor == 1)
-		{
-			nucleusSequenceForNewBacteria += 1000;
-		}
-		if (greenColor == 1)
-		{
-			nucleusSequenceForNewBacteria += 100;
-		}
-		if (blueColor == 1)
-		{
-			nucleusSequenceForNewBacteria += 10;
-		}
-		if (blackColor == 1)
-		{
-			nucleusSequenceForNewBacteria += 1;
 		}
 
 		Debug.Log("nucleusSequenceForNewBacteria: " + nucleusSequenceForNewBacteria);
