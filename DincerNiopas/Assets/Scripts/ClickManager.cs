@@ -10,7 +10,7 @@ public class ClickManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        aminoAcidFactory = new AminoAcidFactory();
+        aminoAcidFactory = GameObject.FindGameObjectWithTag("AminoAcidFactory").GetComponent<AminoAcidFactory>();
         go = GameObject.Find("DNA");
         dna = (DNA)go.GetComponent(typeof(DNA));
     }
