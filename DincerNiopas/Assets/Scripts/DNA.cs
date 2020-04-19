@@ -16,7 +16,7 @@ public class DNA : MonoBehaviour
     void Start()
     {
         sr = this.gameObject.GetComponent<SpriteRenderer>();
-        sr.sprite = red;
+        sr.sprite = white;
     }
 
     // Update is called once per frame
