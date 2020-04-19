@@ -43,7 +43,10 @@ public class BacteriaSpawner : MonoBehaviour
 			{
                 startAfterTime += repeatingTime;
 				var bacteria = Instantiate(bacteriaPrefab, transform.position, Quaternion.identity);
-                bacteria.GetComponent<Bacteria>().SetNucleusSequence(GenerateNucleusSequence());
+                Bacteria bac = bacteria.GetComponent<Bacteria>();
+                bac.SetNucleusSequence(GenerateNucleusSequence());
+                bac.SetSprite();
+
                 numberOfBacteriasInQueue--;
 		    }
 		}
