@@ -26,8 +26,11 @@ public class BacteriaSpawner : MonoBehaviour
 		}
 
 		Debug.Log("nucleusSequenceForNewBacteria: " + nucleusSequenceForNewBacteria);
-		return nucleusSequenceForNewBacteria;
-	}
+        if (nucleusSequenceForNewBacteria == 0)
+            nucleusSequenceForNewBacteria = 1001;
+        
+        return nucleusSequenceForNewBacteria;
+    }
 
 	public void SpawnBacteria () {
 		
@@ -45,7 +48,7 @@ public class BacteriaSpawner : MonoBehaviour
 				var bacteria = Instantiate(bacteriaPrefab, transform.position, Quaternion.identity);
                 Bacteria bac = bacteria.GetComponent<Bacteria>();
                 bac.SetNucleusSequence(GenerateNucleusSequence());
-                bac.SetSprite();
+                //bac.SetSprite();
 
                 numberOfBacteriasInQueue--;
 		    }

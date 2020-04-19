@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bacteria : MonoBehaviour, IKillable
 {
     [SerializeField] GameObject targetCell;
-    private int moveSpeed = 3;
+    [SerializeField] float moveSpeed;
     private float rotateSpeed = 20f;
     Rigidbody2D rb;
     Vector2 targetPosition;
@@ -63,10 +63,12 @@ public class Bacteria : MonoBehaviour, IKillable
     public void SetNucleusSequence(int nucleusSequenceByUser)
     {
 		nucleusSequence = nucleusSequenceByUser;
+        SetSprite();
 	}
 
     public void SetSprite()
     {
-        dna.UpdateSprite(nucleusSequence);
+        //dna.UpdateSprite(nucleusSequence);
+        gameObject.transform.GetComponentsInChildren<DNA>(true)[0].UpdateSprite(nucleusSequence);
     }
 }

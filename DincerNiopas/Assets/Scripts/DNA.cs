@@ -13,16 +13,10 @@ public class DNA : MonoBehaviour
 
     private Image myIMGcomponent;
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         sr = gameObject.GetComponent<SpriteRenderer>();
         sr.sprite = white;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void UpdateSprite(int aminoAcid)
