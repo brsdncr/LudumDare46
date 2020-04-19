@@ -8,15 +8,19 @@ public class GameManager : MonoBehaviour
     int numberOfDeadBacterias;
     List<BacteriaSpawner> bacteriaSpawners;
 
-    // Start is called before the first frame update
-    void Start()
+    //Sound control
+	AudioManager audioManager;
+
+	// Start is called before the first frame update
+	void Start()
     {
         numberOfDeadBacterias = 0;
         SetBacteriaSpawners();
         AssignBacterias();
-    }
+		audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+	}
 
-    private void SendRequestToSpawnANewBacteria()
+	private void SendRequestToSpawnANewBacteria()
     {
         int randomSpawnerIndex = Random.Range(0, bacteriaSpawners.Count);
         bacteriaSpawners[randomSpawnerIndex].SpawnBacteria();
@@ -44,7 +48,8 @@ public class GameManager : MonoBehaviour
         numberOfDeadBacterias++;
         if (numberOfDeadBacterias == numberOfBacteriasForLevel)
         {
-            Debug.Log("Level Ended");
+			audioManager.GameOver();
+			Debug.Log("Level Ended");
         }
     }
 }

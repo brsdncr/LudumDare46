@@ -8,6 +8,7 @@ TagManager:
   - GameManager
   - DNA
   - AminoAcidFactory
+  - AudioManager
   layers:
   - Default
   - TransparentFX

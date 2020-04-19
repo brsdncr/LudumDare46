@@ -11,6 +11,8 @@ public class Bacteria : MonoBehaviour, IKillable
     Vector2 targetPosition;
     
     GameManager gameManager;
+    AudioManager audioManager;
+
     DNA dna;
 
     int nucleusSequence = 9999;
@@ -18,6 +20,7 @@ public class Bacteria : MonoBehaviour, IKillable
     private void Awake()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
     }
 
     private void Start()
@@ -56,7 +59,12 @@ public class Bacteria : MonoBehaviour, IKillable
         if (nucleusSequence == aminoAcid)
         {
             gameManager.AnnounceBacteriaDeath();
+            audioManager.BacteriaDeath();
             Destroy(gameObject);
+        }
+        else
+        {
+            audioManager.BacteriaBuzz();
         }
     }
 
