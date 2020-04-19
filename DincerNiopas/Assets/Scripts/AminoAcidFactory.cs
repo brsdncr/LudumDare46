@@ -13,7 +13,8 @@ public class AminoAcidFactory : MonoBehaviour
     }
     public int AddNucleoAcid(int newNucleoAcid)
     {
-        if (currentNucleoAcid % newNucleoAcid == 0)
+
+        if (currentNucleoAcid % (newNucleoAcid*10) == 0 || newNucleoAcid > currentNucleoAcid)
         {
             currentNucleoAcid += newNucleoAcid;
         }

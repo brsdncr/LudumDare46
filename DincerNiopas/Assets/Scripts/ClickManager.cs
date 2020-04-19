@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class ClickManager : MonoBehaviour
 {
+    GameObject go;
+    DNA dna;
     AminoAcidFactory aminoAcidFactory;
     // Start is called before the first frame update
     void Start()
     {
         aminoAcidFactory = new AminoAcidFactory();
+        go = GameObject.Find("DNA");
+        dna = (DNA)go.GetComponent(typeof(DNA));
     }
 
     // Update is called once per frame
@@ -25,14 +29,14 @@ public class ClickManager : MonoBehaviour
                 if (hit.collider.gameObject.GetComponent(typeof(INucleoAcid)) is INucleoAcid nucleoAcid)
                 {
                     aminoAcidFactory.AddNucleoAcid(nucleoAcid.GetNucleoAcid());
+                    dna.UpdateSprite(aminoAcidFactory.GetNucleoAcid());
                 }
                 if (hit.collider.gameObject.GetComponent(typeof(IKillable)) is IKillable bacteria)
                 {
-                    Debug.Log(aminoAcidFactory.GetNucleoAcid());
                     bacteria.Kill(aminoAcidFactory.SendAminoAcid());
+                    dna.UpdateSprite(aminoAcidFactory.GetNucleoAcid());
                 }
-                Debug.Log(hit.collider.gameObject.name);
-                //hit.collider.gameObject.GetComponent<Bacteria>().DestroyBacteria(9999);
+
             }
         }
     }
