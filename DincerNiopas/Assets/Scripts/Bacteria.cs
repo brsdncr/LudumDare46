@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bacteria : MonoBehaviour
+public class Bacteria : MonoBehaviour, IKillable
 {
     [SerializeField] GameObject targetCell;
     private int moveSpeed = 3;
@@ -39,9 +39,19 @@ public class Bacteria : MonoBehaviour
         
     }
 
-    public void DestroyBacteria(int sequenceFromUser)
+/*    public void DestroyBacteria(int sequenceFromUser)
     {
         if(nucleusSequence == sequenceFromUser)
+        {
+            gameManager.AnnounceBacteriaDeath();
+            Destroy(gameObject);
+        }
+    }
+*/
+
+    public void Kill(int aminoAcid)
+    {
+        if (nucleusSequence == aminoAcid)
         {
             gameManager.AnnounceBacteriaDeath();
             Destroy(gameObject);
