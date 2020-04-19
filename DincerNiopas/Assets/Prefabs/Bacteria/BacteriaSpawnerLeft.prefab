@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d105780b8ab8a4e4b86841bbef9b9d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bacteriaPrefab: {fileID: 1907220513044348658, guid: be37397fa1fdd44b9a67af4a175227db,
+  bacteriaPrefab: {fileID: 8613406161206638853, guid: 044f15123b50e4f479717a4a917600fa,
     type: 3}
   startAfterTime: 3
   repeatingTime: 1

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BacteriaSpawner
   - GameManager
+  - DNA
   layers:
   - Default
   - TransparentFX

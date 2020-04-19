@@ -198,66 +198,28 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.4570946, y: -0.6573806}
-      - {x: 0.89, y: -1.4499999}
-      - {x: 1.06, y: -1.3399999}
-      - {x: 1.28, y: -1.12}
-      - {x: 1.3299999, y: -1.05}
-      - {x: 1.4499999, y: -0.89}
-      - {x: 1.55, y: -0.69}
-      - {x: 1.5899999, y: -0.59}
-      - {x: 1.65, y: -0.41}
-      - {x: 1.67, y: -0.29999998}
-      - {x: 1.6899999, y: -0.14999999}
-      - {x: 1.6899999, y: 0.16}
-      - {x: 1.67, y: 0.29999998}
-      - {x: 1.63, y: 0.48}
-      - {x: 1.5799999, y: 0.62}
-      - {x: 1.49, y: 0.82}
-      - {x: 1.39, y: 0.97999996}
-      - {x: 1.3299999, y: 1.06}
-      - {x: 1.2282516, y: 1.29}
-      - {x: 0.89, y: 1.4499999}
-      - {x: 0.69, y: 1.55}
-      - {x: 0.53999996, y: 1.62}
-      - {x: 0.39999998, y: 1.65}
-      - {x: 0.29999998, y: 1.67}
-      - {x: 0.14999999, y: 1.6899999}
-      - {x: -0.16, y: 1.6899999}
-      - {x: -0.29999998, y: 1.67}
-      - {x: -0.48, y: 1.63}
-      - {x: -0.62, y: 1.5799999}
-      - {x: -0.82, y: 1.49}
-      - {x: -0.97999996, y: 1.39}
-      - {x: -1.11, y: 1.28}
-      - {x: -1.28, y: 1.11}
-      - {x: -1.3299999, y: 1.05}
-      - {x: -1.4499999, y: 0.89}
-      - {x: -1.55, y: 0.69}
-      - {x: -1.5899999, y: 0.59}
-      - {x: -1.65, y: 0.41}
-      - {x: -1.67, y: 0.29999998}
-      - {x: -1.6899999, y: 0.14999999}
-      - {x: -1.6899999, y: -0.17}
-      - {x: -1.67, y: -0.29999998}
-      - {x: -1.63, y: -0.48}
-      - {x: -1.61, y: -0.53999996}
-      - {x: -1.55, y: -0.69}
-      - {x: -1.4499999, y: -0.89}
-      - {x: -1.39, y: -0.97999996}
-      - {x: -1.28, y: -1.11}
-      - {x: -1.12, y: -1.28}
-      - {x: -1.3984153, y: -0.7484298}
-      - {x: -1.4199924, y: 0.6978657}
-      - {x: -1.108151, y: 0.6654959}
-      - {x: -0.98630947, y: 0.7231257}
-      - {x: -0.6510489, y: 0.6931257}
-      - {x: -0.3418415, y: 0.68707323}
-      - {x: -0.09421155, y: 0.7368088}
-      - {x: 0.6481509, y: 0.68102026}
-      - {x: 1.0252529, y: 0.65917873}
-      - {x: 1.2889366, y: 0.68523145}
-      - {x: 1.4884081, y: 0.66339016}
+    - - {x: 0.57730556, y: 0.30614215}
+      - {x: 0.48152635, y: 0.3805706}
+      - {x: 0.32694718, y: 0.4470399}
+      - {x: 0.21304582, y: 0.4689473}
+      - {x: 0.041369416, y: 0.4852853}
+      - {x: -0.16175465, y: 0.46410128}
+      - {x: -0.25, y: 0.44703996}
+      - {x: -0.4354921, y: 0.3735307}
+      - {x: -0.56045645, y: 0.27293864}
+      - {x: -0.6174037, y: 0.18293867}
+      - {x: -0.63793164, y: 0.06957382}
+      - {x: -0.6174037, y: -0.0076319575}
+      - {x: -0.5974037, y: -0.06116259}
+      - {x: -0.52, y: -0.14350927}
+      - {x: -0.38564906, y: -0.20703995}
+      - {x: -0.1854208, y: -0.24763185}
+      - {x: 0.06176653, y: -0.2619527}
+      - {x: 0.26, y: -0.25469327}
+      - {x: 0.51, y: -0.21703994}
+      - {x: 0.5889301, y: -0.14469332}
+      - {x: 0.6174037, y: -0.08410126}
+      - {x: 0.6315264, y: 0.20114121}
 --- !u!1 &1143089744
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,6 +599,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 1de8ab8e30aa043d99feb35f9aaa875e,
         type: 3}
+    - target: {fileID: 5323324010807959684, guid: f0dca44ff1c4dad42a2dcd1db4ee91aa,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323324010807959684, guid: f0dca44ff1c4dad42a2dcd1db4ee91aa,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.64
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0dca44ff1c4dad42a2dcd1db4ee91aa, type: 3}
 --- !u!1001 &2348437098383010781
@@ -939,6 +911,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 6d2dcea8d22e445fe9903ca4c2988858,
         type: 3}
+    - target: {fileID: 904971357888089821, guid: 0aaec3b89b4369c498d878e13f5e3017,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 904971357888089821, guid: 0aaec3b89b4369c498d878e13f5e3017,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 904971357888089821, guid: 0aaec3b89b4369c498d878e13f5e3017,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 904971357888089822, guid: 0aaec3b89b4369c498d878e13f5e3017,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 904971357888089822, guid: 0aaec3b89b4369c498d878e13f5e3017,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 904971357888089822, guid: 0aaec3b89b4369c498d878e13f5e3017,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 904971357888089822, guid: 0aaec3b89b4369c498d878e13f5e3017,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.64
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0aaec3b89b4369c498d878e13f5e3017, type: 3}
 --- !u!1001 &6746202035975405991
@@ -1021,6 +1028,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BacteriaSpawnerRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131925321363691965, guid: f4df10545d810436bb218e77b6867b03,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7131925321363691963, guid: f4df10545d810436bb218e77b6867b03,
         type: 3}
@@ -1160,6 +1172,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BacteriaSpawnerLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 7283366310830673776, guid: e913b6afc38a646e1a231f348d5ffdec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7283366310830673777, guid: e913b6afc38a646e1a231f348d5ffdec,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1215,6 +1232,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7283366310830673782, guid: e913b6afc38a646e1a231f348d5ffdec,
+        type: 3}
+      propertyPath: repeatingTime
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e913b6afc38a646e1a231f348d5ffdec, type: 3}
 --- !u!1001 &7740519009881723873
@@ -1228,6 +1250,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BacteriaSpawnerMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7740519010517896109, guid: 069d504a9055c40f9b2946af2b11e7c1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7740519010517896111, guid: 069d504a9055c40f9b2946af2b11e7c1,
         type: 3}

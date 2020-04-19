@@ -11,7 +11,7 @@ public class Bacteria : MonoBehaviour, IKillable
     Vector2 targetPosition;
     
     GameManager gameManager;
-
+    DNA dna;
 
     int nucleusSequence = 9999;
 
@@ -24,6 +24,7 @@ public class Bacteria : MonoBehaviour, IKillable
     {
         
         rb = GetComponent<Rigidbody2D>();
+        dna = gameObject.transform.GetChild(0).GetComponent<DNA>();
         targetPosition = new Vector2(targetCell.transform.position.x, targetCell.transform.position.y);
     }
 
@@ -61,5 +62,6 @@ public class Bacteria : MonoBehaviour, IKillable
     public void SetNucleusSequence(int nucleusSequenceByUser)
     {
 		nucleusSequence = nucleusSequenceByUser;
+        dna.UpdateSprite(nucleusSequence);
 	}
 }

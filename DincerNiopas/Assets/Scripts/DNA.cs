@@ -15,7 +15,7 @@ public class DNA : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        sr = this.gameObject.GetComponent<SpriteRenderer>();
+        sr = gameObject.GetComponent<SpriteRenderer>();
         sr.sprite = white;
     }
 
