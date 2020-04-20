@@ -58,7 +58,7 @@ public class BacteriaSpawner : MonoBehaviour
 	{
         if(numberOfBacteriasInQueue > 0)
 		{
-			if (Time.time > startAfterTime)
+			if (Time.timeSinceLevelLoad > startAfterTime)
 			{
                 startAfterTime += repeatingTime;
                 var bacteria = Instantiate(bacteriaPrefab, transform.position, Quaternion.identity);
