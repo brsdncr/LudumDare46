@@ -78,4 +78,9 @@ public class Bacteria : MonoBehaviour, IKillable
         //dna.UpdateSprite(nucleusSequence);
         gameObject.transform.GetComponentsInChildren<DNA>(true)[0].UpdateSprite(nucleusSequence);
     }
+
+    public void SetSpeed(float speed)
+    {
+        moveSpeed += speed;
+    }
 }

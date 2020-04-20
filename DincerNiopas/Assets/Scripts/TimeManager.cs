@@ -32,7 +32,7 @@ public class TimeManager : MonoBehaviour
     {
         if (ifTimerStarted)
         {
-            float diffTime = Time.time - startTime;
+            float diffTime = Time.timeSinceLevelLoad - startTime;
             string minutes = ((int)diffTime / 60).ToString();
             string seconds = (diffTime % 60).ToString("f2");
 

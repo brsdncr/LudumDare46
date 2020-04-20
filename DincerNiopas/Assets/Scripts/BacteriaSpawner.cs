@@ -6,6 +6,8 @@ public class BacteriaSpawner : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] float startAfterTime;
     [SerializeField] float repeatingTime;
+    int difficultyLevel = 0;
+    float newCellSpeed = 0;
 
 	int numberOfBacteriasInQueue = 0;
 	int numberOfColors = 4;
@@ -41,6 +43,7 @@ public class BacteriaSpawner : MonoBehaviour
 				var bacteria = Instantiate(bacteriaPrefab, transform.position, Quaternion.identity);
                 Bacteria bac = bacteria.GetComponent<Bacteria>();
                 bac.SetNucleusSequence(GenerateNucleusSequence());
+                bac.SetSpeed(newCellSpeed);
 
                 numberOfBacteriasInQueue--;
 		    }
@@ -54,7 +57,15 @@ public class BacteriaSpawner : MonoBehaviour
 	}
 
     public void IncreaseSpawnerDifficulty(float difficultyIncreaseRate){
-        repeatingTime -= difficultyIncreaseRate;
+
+        if(repeatingTime - difficultyIncreaseRate > 0)
+        {
+            difficultyLevel++;
+            newCellSpeed += difficultyIncreaseRate;
+            Debug.Log("Difficulty Increased");
+
+            repeatingTime -= difficultyIncreaseRate;
+        }
     }
     
 }

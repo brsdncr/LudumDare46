@@ -85,7 +85,6 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseGameDifficulty()
 	{
-        Debug.Log("Difficulty Increased");
 		for (int i = 0; i < bacteriaSpawners.Count; i++)
 		{
             bacteriaSpawners[i].IncreaseSpawnerDifficulty(difficultyIncreaseRate);
