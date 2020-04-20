@@ -12,24 +12,42 @@ public class GameManager : MonoBehaviour
     //Sound control
 	AudioManager audioManager;
 	TimeManager timeManager;
+    LevelManager levelManager;
 
-    bool isGameOver = false;
-	float difficultyIncreaseRate = 0.2f;
+    bool isGameOver;
+	float difficultyIncreaseRate;
 
-	// Start is called before the first frame update
-	void Start()
+    GameObject bacteriaHolder;
+
+    // Start is called before the first frame update
+    void Start()
     {
+        isGameOver = false;
+
+        CleanUpScene();
         SetSubManagers();
-        numberOfDeadBacterias = 0;
         SetBacteriaSpawners();
         AssignBacterias();
         StartTimer();
+    }
+
+    private void CleanUpScene()
+    {
+        bacteriaHolder = GameObject.FindGameObjectWithTag("BacteriaHolder");
+        foreach (Transform child in bacteriaHolder.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        Time.timeScale = 1f;
+        difficultyIncreaseRate = 0.2f;
+        numberOfDeadBacterias = 0;
     }
 
     private void SetSubManagers()
     {
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         timeManager = GameObject.FindGameObjectWithTag("TimeManager").GetComponent<TimeManager>();
+        levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
 
     }
 
@@ -61,6 +79,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void EndGame()
+    {
+        levelManager.LoadMainMenu();
+    }
+
     public void AnnounceBacteriaDeath()
     {
         numberOfDeadBacterias++;
@@ -79,7 +102,9 @@ public class GameManager : MonoBehaviour
             audioManager.GameOver();
             timeManager.ShowCurrentScore();
             isGameOver = true;
+            Time.timeScale = 0.1f;
             Debug.Log("Level Ended");
+            Invoke("EndGame", 0.5f);//this will happen after 2 seconds
         }
     }
 
@@ -90,4 +115,7 @@ public class GameManager : MonoBehaviour
             bacteriaSpawners[i].IncreaseSpawnerDifficulty(difficultyIncreaseRate);
         }
 	}
+
+
+
 }

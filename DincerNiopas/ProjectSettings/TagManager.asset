@@ -10,6 +10,8 @@ TagManager:
   - AminoAcidFactory
   - AudioManager
   - TimeManager
+  - LevelManager
+  - BacteriaHolder
   layers:
   - Default
   - TransparentFX

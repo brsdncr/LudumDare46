@@ -3,16 +3,37 @@
 public class BacteriaSpawner : MonoBehaviour
 {
 	[SerializeField] GameObject bacteriaPrefab;
-    // Start is called before the first frame update
     [SerializeField] float startAfterTime;
     [SerializeField] float repeatingTime;
-    int difficultyLevel = 0;
-    float newCellSpeed = 0;
 
-	int numberOfBacteriasInQueue = 0;
-	int numberOfColors = 4;
+    //public float startAfterTime;
+    //public float repeatingTime;
 
-	private int GenerateNucleusSequence()
+    int difficultyLevel;
+    float newCellSpeed;
+
+	int numberOfBacteriasInQueue;
+	int numberOfColors;
+
+    GameObject bacteriaHolder;
+
+    private void Start()
+    {
+        InitializeParams();
+        bacteriaHolder = GameObject.FindGameObjectWithTag("BacteriaHolder");
+    }
+
+    private void InitializeParams()
+    {
+        startAfterTime = 3f;
+        repeatingTime = 3f;
+        newCellSpeed = 0;
+        difficultyLevel = 0;
+        numberOfBacteriasInQueue = 0;
+        numberOfColors = 4;
+    }
+
+    private int GenerateNucleusSequence()
 	{
 		int nucleusSequenceForNewBacteria = 0;
 		for (int i = 0; i < numberOfColors; i++)
@@ -40,10 +61,11 @@ public class BacteriaSpawner : MonoBehaviour
 			if (Time.time > startAfterTime)
 			{
                 startAfterTime += repeatingTime;
-				var bacteria = Instantiate(bacteriaPrefab, transform.position, Quaternion.identity);
+                var bacteria = Instantiate(bacteriaPrefab, transform.position, Quaternion.identity);
                 Bacteria bac = bacteria.GetComponent<Bacteria>();
                 bac.SetNucleusSequence(GenerateNucleusSequence());
                 bac.SetSpeed(newCellSpeed);
+                bac.transform.parent = bacteriaHolder.transform;
 
                 numberOfBacteriasInQueue--;
 		    }
@@ -53,7 +75,6 @@ public class BacteriaSpawner : MonoBehaviour
 	public void SpawnBacteria () {
 		
 		numberOfBacteriasInQueue++;
-
 	}
 
     public void IncreaseSpawnerDifficulty(float difficultyIncreaseRate){
@@ -62,7 +83,7 @@ public class BacteriaSpawner : MonoBehaviour
         {
             difficultyLevel++;
             newCellSpeed += difficultyIncreaseRate;
-            Debug.Log("Difficulty Increased");
+            Debug.Log("Difficulty Increased to: " + difficultyLevel);
 
             repeatingTime -= difficultyIncreaseRate;
         }
