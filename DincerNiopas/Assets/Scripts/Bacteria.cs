@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bacteria : MonoBehaviour, IKillable
 {
-    [SerializeField] GameObject targetCell;
+    GameObject targetCell;
     [SerializeField] float moveSpeed;
     private float rotateSpeed = 20f;
     Rigidbody2D rb;
@@ -19,6 +19,7 @@ public class Bacteria : MonoBehaviour, IKillable
 
     private void Awake()
     {
+        targetCell = GameObject.FindGameObjectWithTag("Cell");
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
     }

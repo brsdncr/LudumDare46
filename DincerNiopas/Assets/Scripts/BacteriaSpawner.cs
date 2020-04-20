@@ -67,10 +67,12 @@ public class BacteriaSpawner : MonoBehaviour
 	{
         if(numberOfBacteriasInQueue > 0)
 		{
-			if (Time.timeSinceLevelLoad > startAfterTime)
+            if (Time.timeSinceLevelLoad > startAfterTime)
 			{
                 startAfterTime += repeatingTime;
-                var bacteria = Instantiate(bacteriaPrefab, transform.position, Quaternion.identity);
+                //var bacteria = Instantiate(bacteriaPrefab, transform.position, Quaternion.identity);
+                Debug.Log("Creating bacteria");
+                var bacteria = Instantiate(Resources.Load("Bacteria/Bacteria") as GameObject, transform.position, Quaternion.identity);
                 Bacteria bac = bacteria.GetComponent<Bacteria>();
                 bac.SetNucleusSequence(GenerateNucleusSequence(difficultyLevel));
                 bac.SetSpeed(newCellSpeed);
@@ -84,7 +86,9 @@ public class BacteriaSpawner : MonoBehaviour
 	public void SpawnBacteria () {
 		
 		numberOfBacteriasInQueue++;
-	}
+
+        Debug.Log("Game Manager SpawnBacteria");
+    }
 
     public void IncreaseSpawnerDifficulty(float difficultyIncreaseRate){
 
@@ -92,7 +96,6 @@ public class BacteriaSpawner : MonoBehaviour
         {
             difficultyLevel++;
             newCellSpeed += difficultyIncreaseRate;
-            Debug.Log("Difficulty Increased to: " + difficultyLevel);
 
             repeatingTime -= difficultyIncreaseRate;
         }

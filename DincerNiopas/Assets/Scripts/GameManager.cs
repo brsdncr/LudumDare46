@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         isGameOver = false;
-
+		numberOfBacteriasForLevel = 1000000;
         CleanUpScene();
         SetSubManagers();
         SetBacteriaSpawners();
@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
         {
             bacteriaSpawners.Add(go.GetComponent<BacteriaSpawner>());
         }
+        Debug.Log("Number of spawners: " + bacteriaSpawners.Count);
     }
 
     private void AssignBacterias()

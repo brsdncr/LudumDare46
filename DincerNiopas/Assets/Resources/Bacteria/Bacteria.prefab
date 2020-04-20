@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3375ab3648214406584168d08cbe7ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCell: {fileID: 7161004537870039750, guid: 7b33094ac71e64e7a81d74de96075574,
+  targetCell: {fileID: 1351037060843799152, guid: fce70dcd4af084a53b0f12f4e3d7d24a,
     type: 3}
   moveSpeed: 0.5
 --- !u!50 &8613406161206638849

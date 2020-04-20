@@ -12,6 +12,7 @@ TagManager:
   - TimeManager
   - LevelManager
   - BacteriaHolder
+  - Cell
   layers:
   - Default
   - TransparentFX
