@@ -69,7 +69,6 @@ public class GameManager : MonoBehaviour
         {
             bacteriaSpawners.Add(go.GetComponent<BacteriaSpawner>());
         }
-        Debug.Log("Number of spawners: " + bacteriaSpawners.Count);
     }
 
     private void AssignBacterias()
