@@ -13,6 +13,7 @@ public class ClickManager : MonoBehaviour
         aminoAcidFactory = GameObject.FindGameObjectWithTag("AminoAcidFactory").GetComponent<AminoAcidFactory>();
         go = GameObject.Find("DNA");
         dna = (DNA)go.GetComponent(typeof(DNA));
+
     }
 
     // Update is called once per frame
