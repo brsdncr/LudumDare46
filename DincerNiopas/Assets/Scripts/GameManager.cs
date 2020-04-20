@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 	TimeManager timeManager;
 
     bool isGameOver = false;
-	float difficultyIncreaseRate = 0.01f;
+	float difficultyIncreaseRate = 0.2f;
 
 	// Start is called before the first frame update
 	void Start()

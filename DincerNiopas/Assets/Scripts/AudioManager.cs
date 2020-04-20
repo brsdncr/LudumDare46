@@ -10,6 +10,24 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip gameOver;
     [SerializeField] AudioClip nucleoAcidSelect;
 
+
+    private static AudioManager _instance = null;
+    
+    void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            this.transform.parent = null;
+            _instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     public void NucleoAcidSelect()
     {
         AudioSource.PlayClipAtPoint(nucleoAcidSelect, Vector3.zero, 0.2f);
