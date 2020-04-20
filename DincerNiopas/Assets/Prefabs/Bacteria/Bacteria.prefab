@@ -207,7 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCell: {fileID: 7161004537870039750, guid: 7b33094ac71e64e7a81d74de96075574,
     type: 3}
-  moveSpeed: 2.5
+  moveSpeed: 0.5
 --- !u!50 &8613406161206638849
 Rigidbody2D:
   serializedVersion: 4
