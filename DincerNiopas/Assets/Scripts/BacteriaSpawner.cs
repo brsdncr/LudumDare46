@@ -11,16 +11,17 @@ public class BacteriaSpawner : MonoBehaviour
 
     int difficultyLevel;
     float newCellSpeed;
+    bool startGenerating;
 
 	int numberOfBacteriasInQueue;
 	int numberOfColors;
 
-    GameObject bacteriaHolder;
+    //GameObject bacteriaHolder;
 
     private void Start()
     {
         InitializeParams();
-        bacteriaHolder = GameObject.FindGameObjectWithTag("BacteriaHolder");
+        //bacteriaHolder = GameObject.FindGameObjectWithTag("BacteriaHolder");
     }
 
     private void InitializeParams()
@@ -31,6 +32,7 @@ public class BacteriaSpawner : MonoBehaviour
         difficultyLevel = 0;
         numberOfBacteriasInQueue = 0;
         numberOfColors = 4;
+        startGenerating = false;
     }
 
     private int GenerateNucleusSequence(int levelDifficulty)
@@ -65,7 +67,10 @@ public class BacteriaSpawner : MonoBehaviour
 
 	private void Update()
 	{
-        if(numberOfBacteriasInQueue > 0)
+
+        //Debug.Log("numberOfBacteriasInQueue: " + numberOfBacteriasInQueue);
+        //Debug.Log("startGenerating: " + startGenerating);
+        if (numberOfBacteriasInQueue > 0 && startGenerating)
 		{
             if (Time.timeSinceLevelLoad > startAfterTime)
 			{
@@ -75,9 +80,9 @@ public class BacteriaSpawner : MonoBehaviour
                 Bacteria bac = bacteria.GetComponent<Bacteria>();
                 bac.SetNucleusSequence(GenerateNucleusSequence(difficultyLevel));
                 bac.SetSpeed(newCellSpeed);
-                bac.transform.parent = bacteriaHolder.transform;
-
-                numberOfBacteriasInQueue--;
+                //bac.transform.parent = bacteriaHolder.transform;
+                if(numberOfBacteriasInQueue > 0)
+                    numberOfBacteriasInQueue--;
 		    }
 		}
 	}
@@ -97,5 +102,10 @@ public class BacteriaSpawner : MonoBehaviour
             repeatingTime -= difficultyIncreaseRate;
         }
     }
-    
+
+    public void StartGenerating()
+    {
+        this.startGenerating = true;
+    }
+
 }

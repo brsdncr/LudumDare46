@@ -23,21 +23,22 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         isGameOver = false;
-		numberOfBacteriasForLevel = 1000000;
+		numberOfBacteriasForLevel = 1000;
         CleanUpScene();
         SetSubManagers();
         SetBacteriaSpawners();
         AssignBacterias();
+        StartGenerating();
         StartTimer();
     }
 
     private void CleanUpScene()
     {
-        bacteriaHolder = GameObject.FindGameObjectWithTag("BacteriaHolder");
-        foreach (Transform child in bacteriaHolder.transform)
-        {
-            Destroy(child.gameObject);
-        }
+        //bacteriaHolder = GameObject.FindGameObjectWithTag("BacteriaHolder");
+        //foreach (Transform child in bacteriaHolder.transform)
+        //{
+        //    Destroy(child.gameObject);
+        //}
         Time.timeScale = 1f;
         difficultyIncreaseRate = 0.1f;
         numberOfDeadBacterias = 0;
@@ -62,6 +63,16 @@ public class GameManager : MonoBehaviour
         bacteriaSpawners[randomSpawnerIndex].SpawnBacteria();
     }
 
+
+
+    private void StartGenerating()
+    {
+        for (int i = 0; i < bacteriaSpawners.Count; i++)
+        {
+            bacteriaSpawners[i].StartGenerating();
+        }
+    }
+
     private void SetBacteriaSpawners()
     {
         bacteriaSpawners = new List<BacteriaSpawner>();
@@ -77,6 +88,7 @@ public class GameManager : MonoBehaviour
         {
             SendRequestToSpawnANewBacteria();
         }
+
     }
 
     private void EndGame()
@@ -104,7 +116,7 @@ public class GameManager : MonoBehaviour
             isGameOver = true;
             Time.timeScale = 0.1f;
             Debug.Log("Level Ended");
-            Invoke("EndGame", 0.5f);//this will happen after 2 seconds
+            Invoke("EndGame", 0.5f);//this will happen after 0.5 seconds
         }
     }
 
