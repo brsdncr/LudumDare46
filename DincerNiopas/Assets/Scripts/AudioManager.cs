@@ -8,7 +8,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip bacteriaDeath;
     [SerializeField] AudioClip bacteriaBuzz;
     [SerializeField] AudioClip gameOver;
+    [SerializeField] AudioClip nucleoAcidSelect;
 
+    public void NucleoAcidSelect()
+    {
+        AudioSource.PlayClipAtPoint(nucleoAcidSelect, Vector3.zero);
+    }
 
     public void BacteriaDeath()
     {

@@ -46,3 +46,4 @@ MonoBehaviour:
   bacteriaDeath: {fileID: 8300000, guid: afe5505225ead4df79dde951aed34621, type: 3}
   bacteriaBuzz: {fileID: 8300000, guid: 6a12b5cd8f7e14fc5bcce1f08cea715e, type: 3}
   gameOver: {fileID: 8300000, guid: ca90c53cf811b439ba746bc30ff14fdd, type: 3}
+  nucleoAcidSelect: {fileID: 8300000, guid: f0d4ba01587a9444197a1b7b690a501e, type: 3}

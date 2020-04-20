@@ -28,7 +28,6 @@ public class Bacteria : MonoBehaviour, IKillable
         
         rb = GetComponent<Rigidbody2D>();
         dna = gameObject.transform.GetChild(0).GetComponent<DNA>();
-        Debug.Log(gameObject.transform.GetChild(0).name);
         targetPosition = new Vector2(targetCell.transform.position.x, targetCell.transform.position.y);
     }
 

@@ -7,8 +7,11 @@ public class AminoAcidFactory : MonoBehaviour
     private int currentNucleoAcid;
     private int temp;
 
+    AudioManager audioManager;
+
     private void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         InitializeNucleoAcid();
     }
     public int AddNucleoAcid(int newNucleoAcid)
@@ -16,6 +19,7 @@ public class AminoAcidFactory : MonoBehaviour
 
         if (currentNucleoAcid % (newNucleoAcid*10) == 0 || newNucleoAcid > currentNucleoAcid)
         {
+            audioManager.NucleoAcidSelect();
             currentNucleoAcid += newNucleoAcid;
         }
         return (currentNucleoAcid);
