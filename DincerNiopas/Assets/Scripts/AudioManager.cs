@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
 
     public void NucleoAcidSelect()
     {
-        AudioSource.PlayClipAtPoint(nucleoAcidSelect, Vector3.zero);
+        AudioSource.PlayClipAtPoint(nucleoAcidSelect, Vector3.zero, 0.2f);
     }
 
     public void BacteriaDeath()
