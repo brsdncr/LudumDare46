@@ -16,12 +16,14 @@ public class AminoAcidFactory : MonoBehaviour
     }
     public int AddNucleoAcid(int newNucleoAcid)
     {
+        int digit = (currentNucleoAcid / newNucleoAcid) % 10;
 
-        if (currentNucleoAcid % (newNucleoAcid*10) == 0 || newNucleoAcid > currentNucleoAcid)
+        if (digit == 0)
         {
             audioManager.NucleoAcidSelect();
             currentNucleoAcid += newNucleoAcid;
         }
+
         return (currentNucleoAcid);
     }
 
