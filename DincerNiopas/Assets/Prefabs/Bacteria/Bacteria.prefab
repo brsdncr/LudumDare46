@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313981750727460002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalPosition: {x: 0.047, y: 0.009, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 8613406161206638854}
   m_RootOrder: 0
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 3ee1995ee56384ac2b1081aa744c09d4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 46525b3da6a73944eb79c724ecccbb8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 8613406161206638855}
   - component: {fileID: 8613406161206638852}
   - component: {fileID: 8613406161206638849}
-  - component: {fileID: 7700627856488281175}
+  - component: {fileID: 9020378459983429780}
   m_Layer: 0
   m_Name: Bacteria
   m_TagString: Untagged
@@ -138,7 +138,7 @@ Transform:
   m_GameObject: {fileID: 8613406161206638853}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6, y: 4, z: 0}
-  m_LocalScale: {x: 9, y: 6, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1313981750727460003}
   m_Father: {fileID: 0}
@@ -182,7 +182,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: f688fd886376a404084664d6090130dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -229,8 +229,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &7700627856488281175
-CapsuleCollider2D:
+--- !u!60 &9020378459983429780
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -242,6 +242,36 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00000008940701, y: -0.0000002831221}
-  m_Size: {x: 0.16801268, y: 0.17204924}
-  m_Direction: 1
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.22, y: 0.98}
+    newSize: {x: 0.2, y: 0.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.11, y: 0.06}
+      - {x: 1.05, y: 0.19999999}
+      - {x: 0.93, y: 0.26}
+      - {x: 0.42999998, y: 0.45999998}
+      - {x: 0.35, y: 0.48999998}
+      - {x: -0.31, y: 0.48999998}
+      - {x: -0.51, y: 0.42}
+      - {x: -0.72999996, y: 0.29999998}
+      - {x: -0.90999997, y: 0.13}
+      - {x: -1.09, y: -0.08}
+      - {x: -1.11, y: -0.14}
+      - {x: -1.11, y: -0.35999998}
+      - {x: -1.09, y: -0.41}
+      - {x: -0.97999996, y: -0.48999998}
+      - {x: -0.44, y: -0.48999998}
+      - {x: -0.14, y: -0.47}
+      - {x: 0.06, y: -0.48999998}
+      - {x: 0.66999996, y: -0.48999998}
+      - {x: 0.88, y: -0.42999998}
+      - {x: 1.05, y: -0.32999998}
+      - {x: 1.11, y: -0.24}
