@@ -959,7 +959,7 @@ PrefabInstance:
     - target: {fileID: 1189691122658926882, guid: acd516a85a3b2465bb0edd3046fb21a3,
         type: 3}
       propertyPath: difficultyTimer
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acd516a85a3b2465bb0edd3046fb21a3, type: 3}
@@ -1605,6 +1605,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6746202036454984462, guid: 8ae034020b276492fab81226aa476a57,
+        type: 3}
+      propertyPath: numberOfBacteriasForLevel
+      value: 10000000
+      objectReference: {fileID: 0}
     - target: {fileID: 6746202036454984461, guid: 8ae034020b276492fab81226aa476a57,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1659,11 +1664,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6746202036454984462, guid: 8ae034020b276492fab81226aa476a57,
-        type: 3}
-      propertyPath: numberOfBacteriasForLevel
-      value: 10000000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ae034020b276492fab81226aa476a57, type: 3}

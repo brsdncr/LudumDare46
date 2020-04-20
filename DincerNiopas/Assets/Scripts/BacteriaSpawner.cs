@@ -33,24 +33,29 @@ public class BacteriaSpawner : MonoBehaviour
         numberOfColors = 4;
     }
 
-    private int GenerateNucleusSequence()
+    private int GenerateNucleusSequence(int levelDifficulty)
 	{
-		int nucleusSequenceForNewBacteria = 0;
-		for (int i = 0; i < numberOfColors; i++)
-		{
-            //From Black to Red
-            int colorSetter = Random.Range(0, 2);
+        int[] nucleusArray = new int[4];
+        int nucleusSequenceForNewBacteria = 0;
 
-            if(colorSetter == 1)
-			{
-				nucleusSequenceForNewBacteria += (int)Mathf.Pow(10f, i);
-			}
+        if(levelDifficulty > numberOfColors)
+        {
+            levelDifficulty = numberOfColors;
+        }
 
-		}
+        for (int i = 0; i < levelDifficulty; i++)
+        {
+            int arrayIndex = Random.Range(0, numberOfColors);
+            nucleusArray[arrayIndex] = 1;
+        }
 
-        if (nucleusSequenceForNewBacteria == 0)
-            nucleusSequenceForNewBacteria = 1001;
-        
+        for (int i = 0; i < nucleusArray.Length; i++)
+        {
+            int currentIndex = nucleusArray.Length - i - 1;
+            Debug.Log(currentIndex);
+            nucleusSequenceForNewBacteria += nucleusArray[i]* (int)Mathf.Pow(10f, (currentIndex));
+        }
+
         return nucleusSequenceForNewBacteria;
     }
 
@@ -63,7 +68,7 @@ public class BacteriaSpawner : MonoBehaviour
                 startAfterTime += repeatingTime;
                 var bacteria = Instantiate(bacteriaPrefab, transform.position, Quaternion.identity);
                 Bacteria bac = bacteria.GetComponent<Bacteria>();
-                bac.SetNucleusSequence(GenerateNucleusSequence());
+                bac.SetNucleusSequence(GenerateNucleusSequence(difficultyLevel));
                 bac.SetSpeed(newCellSpeed);
                 bac.transform.parent = bacteriaHolder.transform;
 
