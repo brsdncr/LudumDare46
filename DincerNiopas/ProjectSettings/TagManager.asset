@@ -9,6 +9,7 @@ TagManager:
   - DNA
   - AminoAcidFactory
   - AudioManager
+  - TimeManager
   layers:
   - Default
   - TransparentFX

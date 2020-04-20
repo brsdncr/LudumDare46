@@ -25,20 +25,13 @@ public class BacteriaSpawner : MonoBehaviour
 
 		}
 
-		Debug.Log("nucleusSequenceForNewBacteria: " + nucleusSequenceForNewBacteria);
         if (nucleusSequenceForNewBacteria == 0)
             nucleusSequenceForNewBacteria = 1001;
         
         return nucleusSequenceForNewBacteria;
     }
 
-	public void SpawnBacteria () {
-		
-		numberOfBacteriasInQueue++;
-
-	}
-
-	void Update()
+	private void Update()
 	{
         if(numberOfBacteriasInQueue > 0)
 		{
@@ -48,10 +41,20 @@ public class BacteriaSpawner : MonoBehaviour
 				var bacteria = Instantiate(bacteriaPrefab, transform.position, Quaternion.identity);
                 Bacteria bac = bacteria.GetComponent<Bacteria>();
                 bac.SetNucleusSequence(GenerateNucleusSequence());
-                //bac.SetSprite();
 
                 numberOfBacteriasInQueue--;
 		    }
 		}
 	}
+
+	public void SpawnBacteria () {
+		
+		numberOfBacteriasInQueue++;
+
+	}
+
+    public void IncreaseSpawnerDifficulty(float difficultyIncreaseRate){
+        repeatingTime -= difficultyIncreaseRate;
+    }
+    
 }
