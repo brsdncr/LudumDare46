@@ -52,10 +52,14 @@ public class BacteriaSpawner : MonoBehaviour
         for (int i = 0; i < nucleusArray.Length; i++)
         {
             int currentIndex = nucleusArray.Length - i - 1;
-            Debug.Log(currentIndex);
             nucleusSequenceForNewBacteria += nucleusArray[i]* (int)Mathf.Pow(10f, (currentIndex));
         }
 
+        //Checking if missed a case
+        if(nucleusSequenceForNewBacteria > 1111 || nucleusSequenceForNewBacteria == 0)
+        {
+            nucleusSequenceForNewBacteria = 1000;
+        }
         return nucleusSequenceForNewBacteria;
     }
 
