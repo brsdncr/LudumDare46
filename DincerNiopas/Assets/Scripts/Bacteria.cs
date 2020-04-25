@@ -8,7 +8,10 @@ public class Bacteria : MonoBehaviour, IKillable
     [SerializeField] float moveSpeed;
     private float rotateSpeed = 20f;
     Rigidbody2D rb;
-    Vector2 targetPosition;
+    //Vector2 targetPosition;
+    Vector2 nextTargetPos;
+    List<Vector3> bacteriaWayPoints;
+    int currentIndexForWaypoint = 0;
     
     GameManager gameManager;
     AudioManager audioManager;
@@ -19,9 +22,10 @@ public class Bacteria : MonoBehaviour, IKillable
 
     private void Awake()
     {
-        targetCell = GameObject.FindGameObjectWithTag("Cell");
+        //targetCell = GameObject.FindGameObjectWithTag("Cell");
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+        bacteriaWayPoints = new List<Vector3>();
     }
 
     private void Start()
@@ -29,18 +33,29 @@ public class Bacteria : MonoBehaviour, IKillable
         
         rb = GetComponent<Rigidbody2D>();
         dna = gameObject.transform.GetChild(0).GetComponent<DNA>();
-        targetPosition = new Vector2(targetCell.transform.position.x, targetCell.transform.position.y);
+        //targetPosition = new Vector2(targetCell.transform.position.x, targetCell.transform.position.y);
     }
 
     private void FixedUpdate()
     {
-        if (targetCell != null)
+        //if (targetCell != null)
+        if(bacteriaWayPoints[currentIndexForWaypoint].GetType() != null)
         {
             rb.velocity = transform.forward * moveSpeed;
-            Quaternion targetRotation = Quaternion.LookRotation(targetCell.transform.position - transform.position);
+            Quaternion targetRotation = Quaternion.LookRotation(bacteriaWayPoints[currentIndexForWaypoint] - transform.position);
             rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed));
-            transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), targetPosition, moveSpeed * Time.fixedDeltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, nextTargetPos, moveSpeed * Time.fixedDeltaTime);
+
+            if (Vector2.Distance(bacteriaWayPoints[currentIndexForWaypoint], new Vector2(transform.position.x, transform.position.y)) < 0.2)
+            {
+                if (currentIndexForWaypoint < bacteriaWayPoints.Count - 1)
+                {
+                    currentIndexForWaypoint++;
+                    nextTargetPos = bacteriaWayPoints[currentIndexForWaypoint];
+                }
+            }
         }
+        
         
     }
 
@@ -83,5 +98,14 @@ public class Bacteria : MonoBehaviour, IKillable
     public void SetSpeed(float speed)
     {
         moveSpeed += speed;
+    }
+
+    public void SetWaypoints(List<GameObject> waypoints)
+    {
+        foreach (var point in waypoints)
+        {
+            bacteriaWayPoints.Add(new Vector2(point.transform.position.x, point.transform.position.y));
+        }
+        nextTargetPos = bacteriaWayPoints[0];
     }
 }

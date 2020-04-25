@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         //    Destroy(child.gameObject);
         //}
         Time.timeScale = 1f;
-        difficultyIncreaseRate = 0.1f;
+        difficultyIncreaseRate = 0.05f;
         numberOfDeadBacterias = 0;
     }
 

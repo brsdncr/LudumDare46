@@ -1,13 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class BacteriaSpawner : MonoBehaviour
 {
 	[SerializeField] GameObject bacteriaPrefab;
     [SerializeField] float startAfterTime;
     [SerializeField] float repeatingTime;
-
-    //public float startAfterTime;
-    //public float repeatingTime;
 
     int difficultyLevel;
     float newCellSpeed;
@@ -16,7 +14,7 @@ public class BacteriaSpawner : MonoBehaviour
 	int numberOfBacteriasInQueue;
 	int numberOfColors;
 
-    //GameObject bacteriaHolder;
+    [SerializeField] List<GameObject> waypoints;
 
     private void Start()
     {
@@ -26,8 +24,8 @@ public class BacteriaSpawner : MonoBehaviour
 
     private void InitializeParams()
     {
-        startAfterTime = 3f;
-        repeatingTime = 3f;
+        startAfterTime = 1f;
+        repeatingTime = 5f;
         newCellSpeed = 0;
         difficultyLevel = 0;
         numberOfBacteriasInQueue = 0;
@@ -80,6 +78,7 @@ public class BacteriaSpawner : MonoBehaviour
                 Bacteria bac = bacteria.GetComponent<Bacteria>();
                 bac.SetNucleusSequence(GenerateNucleusSequence(difficultyLevel));
                 bac.SetSpeed(newCellSpeed);
+                bac.SetWaypoints(waypoints);
                 //bac.transform.parent = bacteriaHolder.transform;
                 if(numberOfBacteriasInQueue > 0)
                     numberOfBacteriasInQueue--;

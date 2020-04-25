@@ -19,6 +19,13 @@ public class ClickManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckMouseInput();
+    }
+
+
+
+    void CheckMouseInput()
+    {
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

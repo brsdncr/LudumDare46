@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1313981750727460003}
   - component: {fileID: 1313981750727460000}
   - component: {fileID: 6166290023456722261}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DNA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 8613406161206638852}
   - component: {fileID: 8613406161206638849}
   - component: {fileID: 9020378459983429780}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bacteria
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,9 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3375ab3648214406584168d08cbe7ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCell: {fileID: 1351037060843799152, guid: fce70dcd4af084a53b0f12f4e3d7d24a,
-    type: 3}
-  moveSpeed: 0.5
+  moveSpeed: 0.25
 --- !u!50 &8613406161206638849
 Rigidbody2D:
   serializedVersion: 4
